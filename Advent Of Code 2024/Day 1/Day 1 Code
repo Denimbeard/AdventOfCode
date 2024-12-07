@@ -1,0 +1,34 @@
+#!/usr/bin/env python
+
+
+"""Code for Advent of Code 2024, Day 1, Project A"""
+
+__author__ = "Chet Coenen"
+__copyright__ = "Copyright 2024, Chet Coenen"
+__credits__ = ["Chet Coenen"]
+__license__ = "GPL"
+__version__ = "1.0"
+__maintainer__ = "Chet Coenen"
+__email__ = "chet.m.coenen@icloud.com"
+__status__ = "Production"
+
+array_1 = []
+array_2 = []
+
+# Pull the text data into two lists
+with open("D:\chetm\Documents\Code Projects\Advent Of Code 2024\Day 1\Day 1 Input Lists.txt") as f:
+    for line in f:
+        item1,item2 = map(int,line.split())
+        array_1.append(item1)
+        array_2.append(item2)
+
+# Sort those lists Smallest to Largest
+array_1.sort()
+array_2.sort()
+
+# Find the absolute value between each of the numbers in the lists
+distance = [abs(array_1[i] - array_2[i]) for i in range(len(array_1))]
+
+# Show me the sum of those values
+print("The total value of the differences between the numbers is: " + str(sum(distance)))
+
